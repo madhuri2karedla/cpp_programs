@@ -1,26 +1,26 @@
 #include<iostream>
 using namespace std;
-class base
+class frend
 {
- int val1,val2;
- public:
- 	void get()
- 	{
- 		cout<<"entr two avlues"<<endl;
- 		cin>>val1>>val2;
- 		
-	 }
-	 friend float avg(base ob);
+	private:
+		int x,y;
+	public:
+		void get()
+		{
+			cout<<"enter x,y values:";
+			cin>>x>>y;
+			
+		}
+		friend void sum();
 };
-float avg(base ob)
+void sum()
 {
-	return float(ob.val1+ob.val2)/2;
-	
+	frend f;
+	f.get();
+	cout<<"sum of "<<f.x<<"and"<<f.y<<"is "<<f.x+f.y;
 }
 int main()
 {
-	base obj;
-	obj.get();
-	cout<<"\n average value is :"<<avg(obj)<<endl;
+	sum();
 	return 0;
 }

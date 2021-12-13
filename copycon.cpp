@@ -5,11 +5,11 @@ class sample
 	private:
 		int x;
 	public:
-		sampe(sample &s)
+		sample(sample &s)
 		{
 			x=s.x;
 	    }
-	    void get()
+		sample()
 		{
 			cout<<"enter x value:"<<endl;
 			cin>>x;
@@ -22,7 +22,6 @@ class sample
 int main()
 {
 	sample s1;
-	s1.get();
 	s1.show();
 	sample s2(s1);
 	s2.show();

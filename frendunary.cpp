@@ -17,17 +17,18 @@ class sample
 			cout<<"y="<<y<<endl;
 			cout<<"z="<<z<<endl;
 		}
-		void operator ++()
+		 friend void operator -(sample &m);
+	};
+		void operator -(sample &m)
 		{
-			x=x++;
-			y=y++;
-			z=z++;
+			m.x=-m.x;
+			m.y=-m.y;
+			m.z=-m.z;
 		}
-};
 int main()
 {
 	sample s;
-	++s;//s.operator -();
+	-s;//s.operator -();
 	s.show();
 	return 0;
 }
