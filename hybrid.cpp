@@ -5,12 +5,15 @@ class student
 	protected:
 		string name;
 		int id;
+		char gender;
 	void gets()
 	{
 		cout<<"enter name";
 		cin>>name;
 		cout<<"enterid";
 		cin>>id;
+		cout<<"enter gender M or F";
+		cin>>gender;
 	}
 		
 };
@@ -27,11 +30,11 @@ class marks:public student
 class project
 {
 	protected:
-		float ip,ep;
+		float im,em;
 	void getp()
 	{
 	cout<<"enter  project marks";
-		cin>>ip>>ep;	
+		cin>>im>>em;	
 	}
 };
 class percentage:public marks,public project
@@ -46,9 +49,10 @@ class percentage:public marks,public project
 			getp();
 			cout<<"name is"<<name<<endl;
 			cout<<"id is"<<id<<endl;
-			cout<<"marks m1 m2 m3 m4 are      "<<m1<<"\t"<<m2<<"\t"<<m3<<"\t"<<m4<<endl;
-			cout<<"project marks ip,ep are "<<ip<<"\t"<<ep<<endl;
-			per=(float)(m1+m2+m3+m4+ip+ep)/6;
+			cout<<"gender is"<<gender<<endl;
+			cout<<"marks m1 m2 m3 m4 are "<<m1<<"\t"<<m2<<"\t"<<m3<<"\t"<<m4<<endl;
+			cout<<"project marks im,em are "<<im<<"\t"<<em<<endl;
+			per=(float)(m1+m2+m3+m4+im+em)/6;
 			cout<<"percentage is"<<per;
 		}
 		
@@ -59,4 +63,3 @@ int main()
 	p.show();
 	return 0;
 }
-

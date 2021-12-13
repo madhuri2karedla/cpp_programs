@@ -2,27 +2,25 @@
 using namespace std;
 class A
 {
-	protected:
+	public:
 		void getA()
 		{
 		cout<<"method of class A"<<endl;
 		}
 };
-class B:public A
+class B: virtual public A
 {
-	protected:
+	public:
 		void getB()
 		{
-			getA();
 			cout<<"method of class B"<<endl;
 		}
 };
-class C:public A
+class C: virtual public A
 {
-	protected:
+	public:
 		void getC()
 		{
-			getA();
 			cout<<"method of class C"<<endl;
 		}
 };
@@ -31,14 +29,15 @@ class D:public B,public C
 	public:
 		void getD()
 		{
-			getB();
-			getC();
 			cout<<"method of class D"<<endl;
 		}
 };
 int main()
 {
 	D d;
+	d.getA();
+	d.getB();
+	d.getC();
 	d.getD();
 	return 0;
 }
