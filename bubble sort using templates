@@ -1,0 +1,36 @@
+#include<iostream>
+using namespace std;
+template<typename T>
+void sort(T a[],int n)
+{
+	T temp;
+	int i,j;
+	for(i=0;i<n-1;i++)
+	{
+		for(j=0;j<n-1-i;j++)
+		{
+			if(a[j]>a[j+1])
+			{
+				temp=a[j];
+				a[j]=a[j+1];
+				a[j+1]=temp;
+				
+			}
+		}
+	}
+	cout<<"\n"<<"sorted order is:";
+		for(i=0;i<n;i++)
+		{
+			cout<<a[i]<<"\t";
+		}
+	}
+int main()
+{
+	int a[5]={12,54,23,76,34};
+	char ch[7]={'m','a','d','h','u','r','i'};
+	float f[6]={12.34,23.78,14.56,34.23,25.33,9.45};
+	sort(a,5);
+	sort(ch,7);
+	sort(f,6);
+	return 0;
+}
