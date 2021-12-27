@@ -1,0 +1,41 @@
+#include<iostream>
+using namespace std;
+template<class T>
+class array
+{
+	private:
+		T a[20];
+		int i,n;
+	public:
+		void getdata()
+		{
+			cout<<"enter no.of.elements:";
+			cin>>n;
+			cout<<"enter the elements:";
+			for(i=0;i<n;i++)
+			{
+				cin>>a[i];
+			}
+			
+		}
+		void print()
+			{
+              	cout<<"the elements are:";
+              	for(i=0;i<n;i++)
+	            cout<<a[i]<<"\t";
+			
+           }
+};
+
+int main()
+{
+	array <int>a1;
+	array <char>a2;
+	cout<<"integer data\n";
+	a1.getdata();
+	a1.print();
+	cout<<"\ncharacter data\n";
+	a2.getdata();
+	a2.print();
+	return 0;
+}
